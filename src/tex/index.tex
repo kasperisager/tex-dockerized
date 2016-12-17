@@ -1,0 +1,29 @@
+\documentclass[a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{geometry}
+
+\title{Tales of a \LaTeX Adventure}
+\author{John Doe}
+
+\geometry{margin = 25mm}
+
+\setmainfont{open-sans}[
+  Extension = .ttf,
+  Path = src/font/,
+  UprightFont = */400,
+  ItalicFont = */400i,
+  BoldFont = */600,
+  BoldItalicFont = */600i
+]
+
+\setmonofont{inconsolata}[
+  Extension = .ttf,
+  Path = src/font/,
+  UprightFont = */400,
+  BoldFont = */700
+]
+
+\begin{document}
+  \maketitle
+\end{document}

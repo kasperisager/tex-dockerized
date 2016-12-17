@@ -1,0 +1,8 @@
+version: "2"
+
+services:
+  tex:
+    build: .
+    volumes:
+      - .:/opt/tex
+    command: src/tex/index.tex
