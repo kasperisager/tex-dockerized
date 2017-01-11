@@ -1,7 +1,10 @@
 FROM ubuntu:16.04
 
-RUN apt-get update -qq
-RUN apt-get install -qq -y texlive-xetex python3
+RUN apt-get update
+RUN apt-get install -y texlive-full python3 python3-pip
+
+RUN pip3 install --upgrade pip
+RUN pip3 install pygments
 
 ADD https://raw.githubusercontent.com/aclements/latexrun/master/latexrun \
     /usr/local/bin/latexrun
@@ -12,6 +15,11 @@ RUN mkdir -p /opt/tex
 
 WORKDIR "/opt/tex"
 
-VOLUME ["/opt/tex"]
+VOLUME "/opt/tex"
 
-ENTRYPOINT ["latexrun", "--latex-cmd", "xelatex", "-O", ".out"]
+ENTRYPOINT [ \
+  "latexrun", \
+  "--latex-cmd", "xelatex", \
+  "--latex-args", "\"-shell-escape\"", \
+  "-O", "." \
+]

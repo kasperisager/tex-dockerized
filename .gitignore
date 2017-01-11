@@ -1,2 +1,7 @@
-.out/
 *.pdf
+*.aux
+*.fls
+*.log
+*.db
+*.db.lock
+_minted-index
