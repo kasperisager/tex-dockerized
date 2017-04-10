@@ -5,4 +5,18 @@ services:
     build: .
     volumes:
       - .:/opt/tex
+    entrypoint:
+      - latexrun
+      - --latex-cmd
+      - xelatex
+      - --latex-args
+      - "\"-shell-escape\""
+      - -O
+      - .
     command: src/tex/index.tex
+
+  texcount:
+    extends:
+      service: tex
+    entrypoint: texcount
+    command: src/tex/index.tex -inc -char -sum -total

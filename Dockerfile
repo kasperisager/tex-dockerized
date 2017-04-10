@@ -16,10 +16,3 @@ RUN mkdir -p /opt/tex
 WORKDIR "/opt/tex"
 
 VOLUME "/opt/tex"
-
-ENTRYPOINT [ \
-  "latexrun", \
-  "--latex-cmd", "xelatex", \
-  "--latex-args", "\"-shell-escape\"", \
-  "-O", "." \
-]

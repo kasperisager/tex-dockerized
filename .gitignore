@@ -1,7 +1,12 @@
-*.pdf
+_minted-index
 *.aux
-*.fls
-*.log
+*.bbl
+*.blg
 *.db
 *.db.lock
-_minted-index
+*.fls
+*.lof
+*.log
+*.out
+*.pdf
+*.toc
